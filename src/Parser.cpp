@@ -20,6 +20,7 @@
 #include "Acos.h"
 #include "Asin.h"
 #include "Sqrt.h"
+#include "Faculty.h"
 
 Parser::Parser(const vector<token>& tokens)
 {
@@ -141,7 +142,13 @@ Expression* Parser::factor_op(Expression* l) {
     if(lookahead.type == RAISED) {
         consume();
         return new Raised(l,signed_factor());
-    } else {
+    }
+    else if(lookahead.type == FACULTY) {
+        consume();
+        return new Faculty(l);
+    }
+
+    else {
         return l;
     }
 }

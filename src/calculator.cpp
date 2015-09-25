@@ -15,6 +15,7 @@ int main()
     t.add("\\+|-",PLUSMINUS);
     t.add("\\*|/",MULTDIV);
     t.add("\\^",RAISED);
+    t.add("!",FACULTY);
     //regexp matching is greedy; try sinh/cosh/tanh first
     t.add("sinh|cosh|tanh",FUNCTION);
     t.add("asin|acos|atan",FUNCTION);

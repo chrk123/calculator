@@ -19,7 +19,7 @@ double Log::evaluate() {
     return log(exp->evaluate())/log(base);
 }
 void Log::print() {
-    cout << "tanh_" << base << "( ";
+    cout << "log_" << base << "( ";
     exp->print();
     cout << " ) ";
 }

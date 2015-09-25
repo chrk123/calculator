@@ -1,10 +1,10 @@
 # calculator
-An object orientied, tree based, calculator, that was built around a recursive descent parser for arithmetical expressions
+An object orientied, tree based, calculator that was built around a recursive descent parser for arithmetical expressions
 
 It is written in C++11 and currently supports the following operations:
 
 **binary operators:** +,\*,-,/,^  
-**unary operators:** +,-  
+**unary operators:** +,-,!(postfix)
 **functions:** *sin,cos,tan,asin,acos,atan,sinh,cosh,tanh,log,log[BASE],sqrt*  
 
 ## Examples

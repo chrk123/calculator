@@ -16,7 +16,8 @@ enum TokenTypes {
     OPEN_BRACKET,
     CLOSE_BRACKET,
     NUMBER,
-    EPSILON
+    EPSILON,
+    FACULTY
 };
 
 struct token {
