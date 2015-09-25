@@ -6,17 +6,7 @@
 
 #include "Tokenizer.h"
 #include "Expression.h"
-#include "BinAdd.h"
-#include "BinSub.h"
-#include "Constant.h"
-#include "Cos.h"
-#include "Sin.h"
-#include "Tan.h"
-#include "Div.h"
-#include "Mult.h"
-#include "Raised.h"
-#include "UnOp.h"
-#include "UnSub.h"
+
 
 /*
 TERMINAL             meaning            type

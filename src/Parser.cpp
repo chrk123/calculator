@@ -1,6 +1,25 @@
 #include <iostream>
 
 #include "Parser.h"
+#include "BinAdd.h"
+#include "BinSub.h"
+#include "Constant.h"
+#include "Cos.h"
+#include "Sin.h"
+#include "Tan.h"
+#include "Div.h"
+#include "Mult.h"
+#include "Raised.h"
+#include "UnOp.h"
+#include "UnSub.h"
+#include "Cosh.h"
+#include "Sinh.h"
+#include "Tanh.h"
+#include "Log.h"
+#include "Atan.h"
+#include "Acos.h"
+#include "Asin.h"
+#include "Sqrt.h"
 
 Parser::Parser(const vector<token>& tokens)
 {
@@ -146,9 +165,48 @@ Expression* Parser::argument() {
             consume();
             temp = new Cos(argument());
         }
-        else {
+        else if(lookahead.sequence == "tan") {
             consume();
             temp = new Tan(argument());
+        }
+        else if(lookahead.sequence == "cosh") {
+            consume();
+            temp = new Cosh(argument());
+        }
+        else if(lookahead.sequence == "sinh") {
+            consume();
+            temp = new Sinh(argument());
+        }
+        else if(lookahead.sequence == "tanh") {
+            consume();
+            temp = new Tanh(argument());
+        }
+        else if(lookahead.sequence == "atan") {
+            consume();
+            temp = new Atan(argument());
+        }
+        else if(lookahead.sequence == "acos") {
+            consume();
+            temp = new Acos(argument());
+        }
+        else if(lookahead.sequence == "asin") {
+            consume();
+            temp = new Asin(argument());
+        }
+        else if(lookahead.sequence == "sqrt") {
+            consume();
+            temp = new Sqrt(argument());
+        }
+        //Log
+        else {
+            if(lookahead.sequence.find("[") !=  std::string::npos) {
+              string strBase = lookahead.sequence.substr(4,lookahead.sequence.find("]")-1);
+              consume();
+              temp = new Log(argument(),stod(strBase));
+            } else {
+              consume();
+              temp = new Log(argument(),M_E);
+            }
         }
 
         return temp;

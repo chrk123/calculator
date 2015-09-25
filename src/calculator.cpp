@@ -4,9 +4,6 @@
 #include "Tokenizer.h"
 #include "Parser.h"
 #include "Expression.h"
-#include "Constant.h"
-#include "BinAdd.h"
-#include "BinSub.h"
 
 using namespace std;
 
@@ -18,7 +15,11 @@ int main()
     t.add("\\+|-",PLUSMINUS);
     t.add("\\*|/",MULTDIV);
     t.add("\\^",RAISED);
-    t.add("sin|cos|tan",FUNCTION);
+    //regexp matching is greedy; try sinh/cosh/tanh first
+    t.add("sinh|cosh|tanh",FUNCTION);
+    t.add("asin|acos|atan",FUNCTION);
+    t.add("sin|cos|tan|sqrt",FUNCTION);
+    t.add("log\\[[[[:digit:]]+(\\.)?[[:digit:]]*\\]|log",FUNCTION);
     t.add("\\(",OPEN_BRACKET);
     t.add("\\)",CLOSE_BRACKET);
     t.add("[[:digit:]]+(\\.)?[[:digit:]]*",NUMBER);
