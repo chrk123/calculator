@@ -4,7 +4,7 @@ An object orientied, tree based, calculator that was built around a recursive de
 It is written in C++11 and currently supports the following operations:
 
 **binary operators:** +,\*,-,/,^  
-**unary operators:** +,-,!(postfix)
+**unary operators:** +,-,!(postfix)  
 **functions:** *sin,cos,tan,asin,acos,atan,sinh,cosh,tanh,log,log[BASE],sqrt*  
 
 ## Examples
